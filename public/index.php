@@ -64,6 +64,8 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
             {
                 if($event['message']['type'] == 'text')
                 {
+                    
+                    
                     // send same message as reply to user
                     $result = $bot->replyText($event['replyToken'], $event['message']['text']);
  
@@ -77,7 +79,24 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                     return $response
                         ->withHeader('Content-Type', 'application/json')
                         ->withStatus($result->getHTTPStatus());
+
+                        
                 }
+                elseif (
+                    $event['message']['type'] == 'image' or
+                    $event['message']['type'] == 'video' or
+                    $event['message']['type'] == 'audio' or
+                    $event['message']['type'] == 'file'
+                ) {
+                    $contentURL = " https://merrylan.herokuapp.com/public/content/" . $event['message']['id'];
+                    $contentType = ucfirst($event['message']['type']);
+                    $result = $bot->replyText($event['replyToken'],
+                        $contentType . " yang Anda kirim bisa diakses dari link:\n " . $contentURL);
+                    $response->getBody()->write(json_encode($result->getJSONDecodedBody()));
+                    return $response
+                        ->withHeader('Content-Type', 'application/json')
+                        ->withStatus($result->getHTTPStatus());
+                } 
             }
         }
     }
@@ -136,6 +155,18 @@ $app->get('/profile', function ($req, $response) use ($bot)
     $response->getBody()->write(json_encode($result->getJSONDecodedBody()));
     return $response
         ->withHeader('Content-Type', 'application/json')
+        ->withStatus($result->getHTTPStatus());
+});
+
+//penyaringan pesan yg dikirim oleh user 
+$app->get('/content/{messageId}', function ($req, $response, $args) use ($bot) {
+    // get message content
+    $messageId = $args['messageId'];
+    $result = $bot->getMessageContent($messageId);
+    // set response
+    $response->getBody()->write($result->getRawBody());
+    return $response
+        ->withHeader('Content-Type', $result->getHeader('Content-Type'))
         ->withStatus($result->getHTTPStatus());
 });
 $app->run();
