@@ -108,11 +108,12 @@ $app->get('/multicast', function($req, $response) use ($bot)
 {
     // list of users
     $userList = [
-        'U9449e62425c93c68c71eeb2fc465889b',
+        'U9449e62425c93c68c71eeb2fc465889b'
         // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
         // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
         // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-        // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'];
+        // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    ];
  
     // send multicast message to user
     $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan multicast');
