@@ -92,11 +92,34 @@ $app->get('/pushmessage', function ($req, $response) use ($bot) {
     $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan push');
     $result = $bot->pushMessage($userId, $textMessageBuilder);
 
+    // Push Message Sticker
     $userId = 'U9449e62425c93c68c71eeb2fc465889b';
     $stickerMessageBuilder = new StickerMessageBuilder(1, 106);
     $bot->pushMessage($userId, $stickerMessageBuilder);
  
     $response->getBody()->write("Pesan push berhasil dikirim!");
+    return $response
+        ->withHeader('Content-Type', 'application/json')
+        ->withStatus($result->getHTTPStatus());
+});
+
+//Multicast Message
+$app->get('/multicast', function($req, $response) use ($bot)
+{
+    // list of users
+    $userList = [
+        'U9449e62425c93c68c71eeb2fc465889b',
+        // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        // 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'];
+ 
+    // send multicast message to user
+    $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan multicast');
+    $result = $bot->multicast($userList, $textMessageBuilder);
+ 
+ 
+    $response->getBody()->write("Pesan multicast berhasil dikirim");
     return $response
         ->withHeader('Content-Type', 'application/json')
         ->withStatus($result->getHTTPStatus());
