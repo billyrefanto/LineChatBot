@@ -125,4 +125,17 @@ $app->get('/multicast', function($req, $response) use ($bot)
         ->withHeader('Content-Type', 'application/json')
         ->withStatus($result->getHTTPStatus());
 });
+
+//get userid
+$app->get('/profile', function ($req, $response) use ($bot)
+{
+    // get user profile
+    $userId = 'Isi dengan userID Anda';
+    $result = $bot->getProfile($userId);
+ 
+    $response->getBody()->write(json_encode($result->getJSONDecodedBody()));
+    return $response
+        ->withHeader('Content-Type', 'application/json')
+        ->withStatus($result->getHTTPStatus());
+});
 $app->run();
