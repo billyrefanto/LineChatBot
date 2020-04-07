@@ -1,0 +1,163 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "fit",
+        "url": "https://id-live-02.slatic.net/p/mdc/0d6ab317f6aaf7e51750205084758721.jpg"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Castangel 350 gram",
+            "wrap": true,
+            "weight": "bold",
+            "size": "xl"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Rp 35.000",
+                "wrap": true,
+                "weight": "bold",
+                "size": "xl",
+                "flex": 0,
+                "color": "#f57224"
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "uri",
+              "label": "Beli Sekarang",
+              "uri": "https://www.lazada.co.id/products/kue-kering-castangel-wisman-350-gram-merry-cake-i230514111-s280521334.html?spm=a2o4j.8553159.0.0.3d447416D9904I"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Tambah ke wishlist",
+              "uri": "https://www.lazada.co.id/shop/merry-cake/"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "fit",
+        "url": "https://id-live-02.slatic.net/p/mdc/aa85495bf280b272c4dd6ce17bb044cb.jpg"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Gandaria Coconut Cookies",
+            "wrap": true,
+            "weight": "bold",
+            "size": "xl"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "flex": 1,
+            "contents": [
+              {
+                "type": "text",
+                "text": "Rp 15.000",
+                "wrap": true,
+                "weight": "bold",
+                "size": "xl",
+                "flex": 0,
+                "color": "#f57224"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Temporarily out of stock",
+            "wrap": true,
+            "size": "xxs",
+            "margin": "md",
+            "color": "#ff5551",
+            "flex": 0
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "flex": 2,
+            "style": "primary",
+            "color": "#aaaaaa",
+            "action": {
+              "type": "uri",
+              "label": "Beli Sekarang",
+              "uri": "https://www.lazada.co.id/shop/merry-cake/"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "uri": "https://www.lazada.co.id/shop/merry-cake/",
+              "label": "Tambah ke wishlist"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "flex": 1,
+            "gravity": "center",
+            "action": {
+              "type": "uri",
+              "label": "See more",
+              "uri": "https://linecorp.com"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
