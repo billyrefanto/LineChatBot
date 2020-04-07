@@ -173,6 +173,8 @@ $app->get('/content/{messageId}', function ($req, $response, $args) use ($bot) {
 // flex
 $app->post('/webhook', function (Request $request, Response $response) use ($channel_secret, $bot, $httpClient, $pass_signature) {
  
+    
+ 
     $data = json_decode($body, true);
     if (is_array($data['events'])) {
         foreach ($data['events'] as $event) {
@@ -181,6 +183,9 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 if ($event['source']['type'] == 'group' or
                     $event['source']['type'] == 'room'
                 ) {
+ 
+                    
+ 
                 // message from single user
                 } else {
                     if ($event['message']['type'] == 'text') {
@@ -212,6 +217,8 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                         ->withHeader('Content-Type', 'application/json')
                         ->withStatus($result->getHTTPStatus());
                 }
+                    
+ 
                 }
             }
         }
