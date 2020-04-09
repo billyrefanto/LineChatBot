@@ -108,7 +108,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
 $app->get('/pushmessage', function ($req, $response) use ($bot) {
     // send push message to user
     $userId = 'U9449e62425c93c68c71eeb2fc465889b';
-    $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan push');
+    $textMessageBuilder = new TextMessageBuilder('Selamat datang di Merrylan Cake & Cookies');
     $result = $bot->pushMessage($userId, $textMessageBuilder);
 
     // Push Message Sticker
@@ -135,7 +135,7 @@ $app->get('/multicast', function($req, $response) use ($bot)
     ];
  
     // send multicast message to user
-    $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan multicast');
+    $textMessageBuilder = new TextMessageBuilder('Happy Shopping!');
     $result = $bot->multicast($userList, $textMessageBuilder);
  
  
