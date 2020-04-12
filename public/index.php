@@ -100,7 +100,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                     $event['message']['type'] == 'audio' or
                     $event['message']['type'] == 'file'
                 ) {
-                    $contentURL = " https://example.herokuapp.com/public/content/" . $event['message']['id'];
+                    $contentURL = " https://merrylan.herokuapp.com/public/content/" . $event['message']['id'];
                     $contentType = ucfirst($event['message']['type']);
                     $result = $bot->replyText($event['replyToken'],
                         $contentType . " yang Anda kirim bisa diakses dari link:\n " . $contentURL);
@@ -158,8 +158,8 @@ $app->get('/content/{messageId}', function ($req, $response, $args) use ($bot) {
 
 $app->get('/pushmessage', function ($req, $response) use ($bot) {
     // send push message to user
-    $userId = 'Isi dengan user ID Anda';
-    $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan push');
+    $userId = 'U9449e62425c93c68c71eeb2fc465889b';
+    $textMessageBuilder = new TextMessageBuilder('Selamat datang di Merrylan Cake & Cookies');
     $result = $bot->pushMessage($userId, $textMessageBuilder);
 
     $response->getBody()->write("Pesan push berhasil dikirim!");
@@ -171,10 +171,10 @@ $app->get('/pushmessage', function ($req, $response) use ($bot) {
 $app->get('/multicast', function ($req, $response) use ($bot) {
     // list of users
     $userList = [
-        'Isi dengan user ID Anda',
-        'Isi dengan user ID teman1',
-        'Isi dengan user ID teman2',
-        'dst'
+        'U9449e62425c93c68c71eeb2fc465889b'
+        // 'Isi dengan user ID teman1',
+        // 'Isi dengan user ID teman2',
+        // 'dst'
     ];
 
     // send multicast message to user
