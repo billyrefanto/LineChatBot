@@ -190,7 +190,8 @@ $app->get('/multicast', function ($req, $response) use ($bot) {
 
 $app->get('/profile/{userId}', function ($req, $response, $args) use ($bot) {
     // get user profile
-    $userId = $args['userId'];
+    // $userId = $args['userId'];
+    $userId = 'U9449e62425c93c68c71eeb2fc465889b';
     $result = $bot->getProfile($userId);
 
     $response->getBody()->write(json_encode($result->getJSONDecodedBody()));
